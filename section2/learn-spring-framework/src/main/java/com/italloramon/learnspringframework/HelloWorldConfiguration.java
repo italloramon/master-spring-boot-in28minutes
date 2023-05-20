@@ -2,6 +2,7 @@ package com.italloramon.learnspringframework;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 record Person(String name, Integer age, Address address) { };
 record Address(String firstLine, String city) { };
@@ -18,6 +19,7 @@ public class HelloWorldConfiguration {
     }
 
     @Bean
+    @Primary
     public Person person() {
         return new Person("Ravi", 1, new Address("Main Street", "London"));
     }
